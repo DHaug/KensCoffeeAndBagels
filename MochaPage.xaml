@@ -1,0 +1,87 @@
+﻿<Page x:Class="KensCoffeeAndBagels.MochaPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KensCoffeeAndBagels"
+        mc:Ignorable="d"
+        d:DesignHeight="576" d:DesignWidth="1024"
+        Title="MochaPage" Background="LightBlue" Height="576" Width="1024">
+    <Grid>
+        <Separator Background="Black" Margin="514,282,-61,285" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.924"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Button x:Name="Complete_Order" Content="Complete Order &gt;" HorizontalAlignment="Left" Margin="808,510,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20"/>
+        <Button x:Name="Edit_Order" Content="Edit Order" HorizontalAlignment="Left" Margin="808,10,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20"/>
+        <Separator Background="Black" Margin="0,296,232,271"/>
+        <TextBlock x:Name="Shop_Namee" Text="Ken's Coffee and Bagels " HorizontalAlignment="Center"  FontSize="35" FontWeight="ExtraBold" Foreground="GhostWhite" Margin="160,10,440,518" Grid.Row="0" Grid.Column="0" Width="424"/>
+        <TextBlock x:Name="Cold_Drinks" Text="Mochas" HorizontalAlignment="Center"  FontSize="24" FontWeight="ExtraBold" Foreground="GhostWhite" Margin="336,52,594,476" Grid.Row="0" Grid.Column="0" Width="94"/>
+        <TextBlock x:Name="Current_Order" HorizontalAlignment="Left" Margin="808,70,0,0" TextWrapping="Wrap" Text="     Current Order" VerticalAlignment="Top" FontSize="24" Width="206"/>
+        <TextBlock x:Name="Mocha_Text_1" HorizontalAlignment="Left" Margin="335,90,0,0" TextWrapping="Wrap" Text="Required" VerticalAlignment="Top" FontSize="24" Width="95"/>
+        <Rectangle x:Name="Size_Con" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="158" Margin="109,137,0,0" Stroke="Black" VerticalAlignment="Top" Width="117" Opacity="0.45"/>
+        <Rectangle x:Name="Milk_Con" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="158" Margin="263,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="117" Opacity="0.45"/>
+        <Rectangle x:Name="Chocolate_Con" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="158" Margin="411,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="118" Opacity="0.45"/>
+        <Rectangle x:Name="Caffine_Con" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="158" Margin="563,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="118" Opacity="0.45"/>
+        <Button x:Name="Add_To_" Content="Add to Order &gt; " HorizontalAlignment="Left" Margin="611,510,0,0" VerticalAlignment="Top" Width="181" Height="57" FontSize="24" Click="Add_To__Click"/>
+        <TextBox x:Name="Comments" HorizontalAlignment="Left" Height="89" Margin="10,416,0,0" TextWrapping="Wrap" Text="&lt;Click to Add Comments&gt;" VerticalAlignment="Top" Width="782" FontSize="22"/>
+        <TextBlock x:Name="Mocha_Text_1_Copy" HorizontalAlignment="Left" Margin="292,310,0,0" TextWrapping="Wrap" Text="Add Ins (Optional)" VerticalAlignment="Top" FontSize="24" Width="198"/>
+        <ComboBox x:Name="Flavor_1" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="120" FontSize="20">
+            <ComboBoxItem IsSelected="True">Caramel</ComboBoxItem>
+            <ComboBoxItem>Vanilla</ComboBoxItem>
+            <ComboBoxItem>- Flavor 3 -</ComboBoxItem>
+            <ComboBoxItem>- Flavor 4 -</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Flavor_2" HorizontalAlignment="Left" Margin="144,340,0,0" VerticalAlignment="Top" Width="120" FontSize="20" RenderTransformOrigin="0.314,0.545">
+            <ComboBoxItem>Caramel</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Vanilla</ComboBoxItem>
+            <ComboBoxItem>- Flavor 3 -</ComboBoxItem>
+            <ComboBoxItem>- Flavor 4 -</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Flavor_3" HorizontalAlignment="Left" Margin="10,378,0,0" VerticalAlignment="Top" Width="120" FontSize="20">
+            <ComboBoxItem>Caramel</ComboBoxItem>
+            <ComboBoxItem>Vanilla</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">- Flavor 3 -</ComboBoxItem>
+            <ComboBoxItem>- Flavor 4 -</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Flavor_4" HorizontalAlignment="Left" Margin="144,378,0,0" VerticalAlignment="Top" Width="120" FontSize="20">
+            <ComboBoxItem>Caramel</ComboBoxItem>
+            <ComboBoxItem>Vanilla</ComboBoxItem>
+            <ComboBoxItem>- Flavor 3 -</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">- Flavor 4 -</ComboBoxItem>
+        </ComboBox>
+        <CheckBox x:Name="Whip_Check" Content="Whipped Creme" HorizontalAlignment="Left" Margin="467,347,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True"/>
+        <CheckBox x:Name="Espresso_Check" Content="Extra Espresso" HorizontalAlignment="Left" Margin="292,378,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <CheckBox x:Name="Chocolate_Check" Content="Extra Chocolate" HorizontalAlignment="Left" Margin="292,347,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="Size" HorizontalAlignment="Left" Margin="144,137,0,0" TextWrapping="Wrap" Text="Size" VerticalAlignment="Top" Height="32" Width="50" FontSize="24"/>
+        <TextBlock x:Name="Size_Copy" HorizontalAlignment="Left" Margin="300,143,0,0" TextWrapping="Wrap" Text="Milk" VerticalAlignment="Top" Height="32" Width="50" FontSize="24"/>
+        <TextBlock x:Name="Size_Copy1" HorizontalAlignment="Left" Margin="421,141,0,0" TextWrapping="Wrap" Text="Chocolate" VerticalAlignment="Top" Height="32" Width="108" FontSize="22"/>
+        <TextBlock x:Name="Size_Copy2" HorizontalAlignment="Left" Margin="569,141,0,0" TextWrapping="Wrap" Text="Caffination" VerticalAlignment="Top" Height="32" Width="112" FontSize="22"/>
+        <RadioButton x:Name="Size_S" GroupName="Size" Content="Small" HorizontalAlignment="Left" Margin="117,182,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="Size_M" GroupName="Size" Content="Medium" HorizontalAlignment="Left" Margin="115,216,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True"/>
+        <RadioButton x:Name="Size_L" GroupName="Size" Content="Large" HorizontalAlignment="Left" Margin="115,251,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="Two" GroupName="Milk" Content="2%" HorizontalAlignment="Left" Margin="270,175,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True"/>
+        <RadioButton x:Name="Whole" GroupName="Milk" Content="Whole" HorizontalAlignment="Left" Margin="270,204,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="Nonfat" GroupName="Milk" Content="Nonfat" HorizontalAlignment="Left" Margin="270,233,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="Soy" GroupName="Milk" Content="Soy" HorizontalAlignment="Left" Margin="270,261,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="White" GroupName="Choco" Content="White" HorizontalAlignment="Left" Margin="423,182,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True"/>
+        <RadioButton x:Name="Dark" GroupName="Choco" Content="Dark" HorizontalAlignment="Left" Margin="421,216,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="MilkC" GroupName="Choco" Content="Milk" HorizontalAlignment="Left" Margin="421,251,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="Reg" GroupName="Caff" Content="Regular" HorizontalAlignment="Left" Margin="579,182,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <RadioButton x:Name="Decaf" GroupName="Caff" Content="Decaf" HorizontalAlignment="Left" Margin="577,216,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True"/>
+        <RadioButton x:Name="Half" GroupName="Caff" Content="Half" HorizontalAlignment="Left" Margin="577,251,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="Back_Button" Content="&lt; Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="141" Height="47" FontSize="20" Click="Back_Button_Click"/>
+        <Label x:Name="Test_Choco" Content="Label" HorizontalAlignment="Left" Margin="808,321,0,0" VerticalAlignment="Top" FontSize="24" Width="206"/>
+        <Label x:Name="Test_Milk" Content="Label" HorizontalAlignment="Left" Margin="808,368,0,0" VerticalAlignment="Top" FontSize="24" Width="206"/>
+        <Label x:Name="Test_Size" Content="Label" HorizontalAlignment="Left" Margin="808,410,0,0" VerticalAlignment="Top" FontSize="24" Width="206"/>
+        <Label x:Name="Test_Caff" Content="Label" HorizontalAlignment="Left" Margin="808,279,0,0" VerticalAlignment="Top" FontSize="24" Width="206"/>
+
+
+    </Grid>
+</Page>
