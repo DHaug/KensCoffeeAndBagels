@@ -34,6 +34,23 @@ namespace KensCoffeeAndBagels
             SeasonalButton.Click += new RoutedEventHandler(Seasonal_Click);
             BlendedButton.Click += new RoutedEventHandler(Blended_Click);
             LatteButton.Click += new RoutedEventHandler(Latte_Click);
+            DeleteEntryInListbox.Click += new RoutedEventHandler(Delete_Item);
+
+            //These handle LIVE changes to our cart list for auto-updating
+            CartListBox.ItemsSource = MainWindow.cart;
+            CartListBox.DataContext = MainWindow.cart;
+
+
+        }
+
+
+        //Allows user to remove from the cart. We only need to remove from cart because our listbox auto-updates with it
+        private void Delete_Item(object sender, RoutedEventArgs e)
+        {
+            if (CartListBox.SelectedIndex >= 0)
+            {
+                MainWindow.cart.RemoveAt(CartListBox.SelectedIndex);
+            }
         }
 
         //Navigation has been set for these
