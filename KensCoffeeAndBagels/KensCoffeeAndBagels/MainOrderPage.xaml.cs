@@ -26,6 +26,7 @@ namespace KensCoffeeAndBagels
             //This is where we handle the click events. Reference the button name and send it to a function
             MochaButton.Click += new RoutedEventHandler(Mocha_Click);
             FrozenDrinksButton.Click += new RoutedEventHandler(Frozen_Click);
+            CompleteOrderButton.Click += new RoutedEventHandler(CompleteOrder_Click);
 
             //These Buttons have been linked to a function but not a navigation because there is no page built yet for them
             TeaButton.Click += new RoutedEventHandler(Tea_Click);
@@ -94,6 +95,11 @@ namespace KensCoffeeAndBagels
         private void Tea_Click(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void CompleteOrder_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CheckOut());
         }
     }
 }
