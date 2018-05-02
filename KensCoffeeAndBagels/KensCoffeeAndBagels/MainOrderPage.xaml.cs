@@ -74,7 +74,7 @@ namespace KensCoffeeAndBagels
 
         private void Latte_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new LattePage());
         }
 
         private void Seasonal_Click(object sender, RoutedEventArgs e)

@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LattePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,6 +98,9 @@
     </Compile>
     <Compile Include="FrozenDrinkPage.xaml.cs">
       <DependentUpon>FrozenDrinkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LattePage.xaml.cs">
+      <DependentUpon>LattePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainOrderPage.xaml.cs">
       <DependentUpon>MainOrderPage.xaml</DependentUpon>
