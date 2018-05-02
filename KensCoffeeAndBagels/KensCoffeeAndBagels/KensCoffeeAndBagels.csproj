@@ -106,10 +106,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PaymentVerification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MochaPage.xaml.cs">
       <DependentUpon>MochaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentVerification.xaml.cs">
+      <DependentUpon>PaymentVerification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

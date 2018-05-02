@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KensCoffeeAndBagels"
+      
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CreditPaymentPage" Background="LightBlue" Height="576" Width="1024">
@@ -29,7 +30,7 @@
 
         <Button x:Name="Back_Button" Content="&lt; Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="141" Height="47" FontSize="20" Click="Back_Button_Click"/>
         <TextBlock Text="Ken's Coffee and Bagels " HorizontalAlignment="Center"  FontSize="35" FontWeight="ExtraBold" Foreground="GhostWhite" Margin="136,10,123,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Width="424"/>
-           <ListView Name="OrderListBox" Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Transparent" BorderThickness="4" Foreground="White" Margin="5,10,10,10"  ItemsSource="{Binding}">
+           <ListView Name="OrderListBox" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Background="Transparent" BorderThickness="4" Foreground="White" Margin="5,10,10,10"  ItemsSource="{Binding}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=title}" Header="Type:" Width="110"/>
@@ -39,7 +40,7 @@
             </ListView.View>
         </ListView>
 
-            <Button x:Name="ContinueButton" Grid.Column="2" Grid.Row="3" Width = "574" Content="Continue to payment >" FontSize="22" FontWeight="Bold" Margin="20,0,20,0" BorderThickness="0" Background="Transparent" Height="140"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="ContinueButton" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Width = "574" Content="Continue to payment >" FontSize="22" FontWeight="Bold" Margin="20,0,20,0" BorderThickness="0" Background="Transparent" Height="200"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <TextBlock Text="Tax" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="5" Grid.Column="0"/>
         <TextBlock Text="Tip" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="6" Grid.Column="0"/>
@@ -47,10 +48,11 @@
         <TextBlock Name="TaxValue" Text="$0.00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="5" Grid.Column="1"/>
         <TextBlock Name="TipValue" Text="$0.00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="6" Grid.Column="1"/>
         <TextBlock Name="SubtotalValue" Text="$0.00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="7" Grid.Column="1"/>
-
-        <TextBlock Text="Receipt" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="4" Grid.Column="2"/>
-        <TextBox x:Name="ReceiptEmail" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Email Here&gt;" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" FontSize="22" Width="342" Margin="5,0,0,0"/>
-        <TextBlock Text="Tip" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="6" Grid.Column="2"/>
-        <TextBox x:Name="TipAmount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Tip Amount&gt;" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" FontSize="22" Width="342" Margin="5,0,0,0"/>
+       
+        <Button x:Name="AddTip" Content="+" Grid.Row="6" Grid.Column="2" Margin="60,10,5,10" Width="30" HorizontalAlignment="Left"/>
+        <TextBlock Text="Receipt" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="4" Grid.Column="2"/>
+        <TextBox x:Name="ReceiptEmail" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Email Here&gt;" Grid.Row="5" Grid.Column="2" VerticalAlignment="Top" FontSize="22" Width="342" Margin="5,0,0,0"/>
+        <TextBlock Text="Tip" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,0,0,0" Grid.Row="6" Grid.Column="2"/>
+        <TextBox x:Name="TipAmount" HorizontalAlignment="Left" Grid.Row="7" Grid.Column="2" VerticalAlignment="Top" FontSize="22" Width="342" Margin="5,0,0,0" Text="1.00"/>
     </Grid>
 </Page>
