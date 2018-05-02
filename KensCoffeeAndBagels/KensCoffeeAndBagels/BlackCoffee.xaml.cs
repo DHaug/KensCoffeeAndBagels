@@ -39,7 +39,13 @@ namespace KensCoffeeAndBagels
             Remove_item.Click += new RoutedEventHandler(Delete_Item);
             Add_To_.Click += new RoutedEventHandler(AddItem);
             Back_Button.Click += new RoutedEventHandler(GoBack);
+            Complete_Order.Click += new RoutedEventHandler(CompleteOrder);
 
+        }
+
+        private void CompleteOrder(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CheckOut());
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
