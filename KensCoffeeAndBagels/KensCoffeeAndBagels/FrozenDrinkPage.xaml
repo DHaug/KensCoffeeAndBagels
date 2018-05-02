@@ -19,8 +19,7 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Button x:Name="Complete_Order" Content="Complete Order &gt;" HorizontalAlignment="Left" Margin="808,510,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20"/>
-        <Button x:Name="Edit_Order" Content="Edit Order" HorizontalAlignment="Left" Margin="808,10,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20"/>
+        <Button x:Name="Complete_Order" Content="Complete Order &gt;" HorizontalAlignment="Left" Margin="808,510,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20" Click="Complete_Order_Click"/>
         <TextBlock x:Name="Shop_Namee" Text="Ken's Coffee and Bagels " HorizontalAlignment="Center"  FontSize="35" FontWeight="ExtraBold" Foreground="GhostWhite" Margin="200,10,400,518" Grid.Row="0" Grid.Column="0" Width="424"/>
         <TextBlock x:Name="Cold_Drinks" Text="Cold Drinks" HorizontalAlignment="Center"  FontSize="24" FontWeight="ExtraBold" Foreground="GhostWhite" Margin="340,52,539,476" Grid.Row="0" Grid.Column="0" Width="145"/>
         <Separator Background="Black" Margin="0,180,232,387"/>
@@ -41,7 +40,6 @@
         <Button x:Name="Smooth_DA" Content="Daily Smoothie" HorizontalAlignment="Left" Margin="553,326,0,0" VerticalAlignment="Top" Width="233" Height="57" FontSize="24" Click="Smooth_DA_Click"/>
         <TextBlock x:Name="Size" HorizontalAlignment="Left" Margin="57,206,0,0" TextWrapping="Wrap" Text="Size" VerticalAlignment="Top" Height="32" Width="50" FontSize="24"/>
         <TextBlock x:Name="Milk" HorizontalAlignment="Left" Margin="198,206,0,0" TextWrapping="Wrap" Text="Milk" VerticalAlignment="Top" Height="32" Width="50" FontSize="24"/>
-        <Label x:Name="Test_Label" Content="Label" HorizontalAlignment="Left" Margin="808,326,0,0" VerticalAlignment="Top" FontSize="24" Width="206"/>
         <RadioButton x:Name="Size_S" GroupName="Size" Content="Small" HorizontalAlignment="Left" Margin="14,249,0,0" VerticalAlignment="Top" FontSize="20"/>
         <RadioButton x:Name="Size_M"  GroupName="Size" Content="Medium" HorizontalAlignment="Left" Margin="14,288,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True"/>
         <RadioButton x:Name="Size_L" GroupName="Size" Content="Large" HorizontalAlignment="Left" Margin="14,326,0,0" VerticalAlignment="Top" FontSize="20"/>
@@ -49,9 +47,17 @@
         <RadioButton x:Name="Whole" GroupName="Milk" Content="Whole" HorizontalAlignment="Left" Margin="162,283,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.45,2.462"/>
         <RadioButton x:Name="Nonfat" GroupName="Milk" Content="Nonfat" HorizontalAlignment="Left" Margin="162,313,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.45,2.462"/>
         <RadioButton x:Name="Soy" GroupName="Milk" Content="Soy" HorizontalAlignment="Left" Margin="162,345,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.45,2.462"/>
-        <Label x:Name="Test_Milk" Content="Label" HorizontalAlignment="Left" Margin="808,368,0,0" VerticalAlignment="Top" FontSize="24" Width="206"/>
-        <Label x:Name="Test_Size" Content="Label" HorizontalAlignment="Left" Margin="808,410,0,0" VerticalAlignment="Top" FontSize="24" Width="206"/>
-        <TextBlock x:Name="Current_Order" HorizontalAlignment="Left" Margin="808,70,0,0" TextWrapping="Wrap" Text="     Current Order" VerticalAlignment="Top" FontSize="24" Width="206"/>
+        <TextBlock x:Name="Current_Order" HorizontalAlignment="Left" Margin="807,10,0,0" TextWrapping="Wrap" Text="     Current Order" VerticalAlignment="Top" FontSize="24" Width="206"/>
+        <ListView x:Name="CartListBox" Background="Transparent" BorderThickness="4" Foreground="White" Margin="807,47,0,170"  ItemsSource="{Binding}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding title}" Header="Type:" Width="80"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding price}" Header="Price" Width="50" />
+                    <GridViewColumn DisplayMemberBinding="{Binding options}" Header="Options" Width="190" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="Remove_item" Content="Remove" HorizontalAlignment="Left" Margin="808,410,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20" Click="Remove_item_Click"/>
 
     </Grid>
 </Page>

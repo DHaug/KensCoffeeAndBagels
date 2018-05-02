@@ -27,6 +27,8 @@ namespace KensCoffeeAndBagels
         {
             smoothie = SmoothieType.SB; //Default Smoothie Type
             InitializeComponent();
+            CartListBox.ItemsSource = MainWindow.cart;
+            CartListBox.DataContext = MainWindow.cart;
 
             /* Hides all components until option is selected */
             /* Size Block */
@@ -92,6 +94,7 @@ namespace KensCoffeeAndBagels
             this.Comments.Visibility  = Visibility.Visible;
         }
 
+
         private void Smooth_SB_Click(object sender, RoutedEventArgs e)
         {
             smoothie = SmoothieType.SB;
@@ -155,57 +158,52 @@ namespace KensCoffeeAndBagels
 
         private void Add_To_Click(object sender, RoutedEventArgs e)
         {
+            double price = 1.0;
+            Item newItem = new Item();
+
             switch (smoothie)
             {
                 case SmoothieType.SB:
-                    Test_Label.Content = "Strawberry Banana";
+                    newItem.title = "Smoothie SB";
+                    price += 1.87;
                     break;
                 case SmoothieType.TB:
-                    Test_Label.Content = "Tropic Berry";
+                    newItem.title = "Smoothie TB";
+                    price += 1.57;
                     break;
                 case SmoothieType.MB:
-                    Test_Label.Content = "Mixed Berry";
+                    newItem.title = "Smoothie MB";
+                    price += 1.90;
                     break;
                 case SmoothieType.MA:
-                    Test_Label.Content = "Mango Acai";
+                    newItem.title = "Smoothie MA";
+                    price += 1.18;
                     break;
                 case SmoothieType.CV:
-                    Test_Label.Content = "Cherry Vanilla";
+                    newItem.title = "Smoothie CV";
+                    price += 1.00;
                     break;
                 case SmoothieType.DA:
-                    Test_Label.Content = "Daily Smoothie";
+                    newItem.title = "Smoothie DA";
+                    price += 1.43;
                     break;
             }
-            if(Size_S.IsChecked == true)
-            {
-                Test_Size.Content = "Size: Small";
-            }
-            else if(Size_M.IsChecked == true)
-            {
-                Test_Size.Content = "Size: Medium";
-            }
-            else
-            {
-                Test_Size.Content = "Size: Large";
-            }
 
-            if (Two.IsChecked == true)
+            newItem.price = (decimal)price;
+            MainWindow.cart.Add(newItem);
+        }
+
+        private void Remove_item_Click(object sender, RoutedEventArgs e)
+        {
+            if (CartListBox.SelectedIndex >= 0)
             {
-                Test_Milk.Content = "Milk: 2%";
+                MainWindow.cart.RemoveAt(CartListBox.SelectedIndex);
             }
-            else if (Whole.IsChecked == true)
-            {
-                Test_Milk.Content = "Milk: Whole";
-            }
-            else if(Nonfat.IsChecked == true)
-            {
-                Test_Milk.Content = "Milk: Nonfat";
-            }
-            else
-            {
-                Test_Milk.Content = "Milk: Soy";
-            }
-            //NavigationService.Navigate(new MainOrderPage());
+        }
+
+        private void Complete_Order_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CheckOut());
         }
     }
 }

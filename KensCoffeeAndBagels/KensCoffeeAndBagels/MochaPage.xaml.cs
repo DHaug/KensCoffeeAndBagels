@@ -22,16 +22,17 @@ namespace KensCoffeeAndBagels
         public MochaPage()
         {
             InitializeComponent();
-            Add_To_.Click += new RoutedEventHandler(Add_Item_To_Cart);
+            CartListBox.ItemsSource = MainWindow.cart;
+            CartListBox.DataContext = MainWindow.cart;
         }
 
         private void Add_Item_To_Cart(object sender, RoutedEventArgs e)
         {
-            Item newItem = new KensCoffeeAndBagels.Item();
-            newItem.price = 10000; //Here you will want to calculate your price
-            newItem.title = "Mocha";
-            newItem.options = " 2% Milk" + "White Chocolate";
-            MainWindow.cart.Add(newItem); //Here it is added to our global static list of our cart.
+            //Item newItem = new KensCoffeeAndBagels.Item();
+            //newItem.price = 10000; //Here you will want to calculate your price
+            //newItem.title = "Mocha";
+            //newItem.options = " 2% Milk" + "White Chocolate";
+            //MainWindow.cart.Add(newItem); //Here it is added to our global static list of our cart.
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -41,65 +42,219 @@ namespace KensCoffeeAndBagels
 
         private void Add_To__Click(object sender, RoutedEventArgs e)
         {
-            /* Size Check */
-            if (Size_S.IsChecked == true)
+            double price = 2.67;
+            Item newItem = new Item();
+
+            string BoxString = (Flavor_1.SelectedItem as ComboBoxItem).Content.ToString();
+            string BoxString1 = (Flavor_2.SelectedItem as ComboBoxItem).Content.ToString();
+            string BoxString2 = (Flavor_3.SelectedItem as ComboBoxItem).Content.ToString();
+            string BoxString3 = (Flavor_4.SelectedItem as ComboBoxItem).Content.ToString();
+
+            switch (BoxString)
             {
-                Test_Size.Content = "Size: Small";
+                case "Vanilla":
+                    newItem.options += "Flavor 1: Vanilla ";
+                    break;
+                case "Caramel":
+                    newItem.options += "Flavor 1: Caramel ";
+                    break;
+                case "Mint":
+                    newItem.options += "Flavor 1: Mint ";
+                    break;
+                case "None":
+                    break;
+                default:
+                    break;
             }
-            else if (Size_M.IsChecked == true)
+            switch (BoxString1)
             {
-                Test_Size.Content = "Size: Medium";
+                case "Vanilla":
+                    newItem.options += "Flavor 2: Vanilla ";
+                    break;
+                case "Caramel":
+                    newItem.options += "Flavor 2: Caramel ";
+                    break;
+                case "Mint":
+                    newItem.options += "Flavor 2: Mint ";
+                    break;
+                case "None":
+                    break;
+                default:
+                    break;
             }
-            else
+            switch (BoxString2)
             {
-                Test_Size.Content = "Size: Large";
+                case "Vanilla":
+                    newItem.options += "Flavor 3: Vanilla ";
+                    break;
+                case "Caramel":
+                    newItem.options += "Flavor 3: Caramel ";
+                    break;
+                case "Mint":
+                    newItem.options += "Flavor 3: Mint ";
+                    break;
+                case "None":
+                    break;
+                default:
+                    break;
+            }
+            switch (BoxString3)
+            {
+                case "Vanilla":
+                    newItem.options += "Flavor 4: Vanilla ";
+                    break;                     
+                case "Caramel":                
+                    newItem.options += "Flavor 4: Caramel ";
+                    break;                     
+                case "Mint":                   
+                    newItem.options += "Flavor 4: Mint ";
+                    break;
+                case "None":
+                    break;
+                default:
+                    break;
             }
 
-            /* Milk Check */
-            if (Two.IsChecked == true)
+            if (Chocolate_Check.IsChecked == true)
             {
-                Test_Milk.Content = "Milk: 2%";
+                newItem.options += "Chocolate ";
             }
-            else if (Whole.IsChecked == true)
+            if (Espresso_Check.IsChecked == true)
             {
-                Test_Milk.Content = "Milk: Whole";
+                newItem.options += "Espresso ";
             }
-            else if (Nonfat.IsChecked == true)
+            if (Whip_Check.IsChecked == true)
             {
-                Test_Milk.Content = "Milk: Nonfat";
-            }
-            else
-            {
-                Test_Milk.Content = "Milk: Soy";
+                newItem.options += "Whipped Creme ";
             }
 
-            /* Chocolate Check */
-            if (White.IsChecked == true)
+            price += Additions();
+
+            newItem.price = (decimal)price;
+            newItem.title = "Mocha";
+
+            MainWindow.cart.Add(newItem);
+        }
+        private double Additions()
+        {
+            double price = 0.0;
+            string BoxString = (Flavor_1.SelectedItem as ComboBoxItem).Content.ToString();
+            string BoxString1 = (Flavor_2.SelectedItem as ComboBoxItem).Content.ToString();
+            string BoxString2 = (Flavor_3.SelectedItem as ComboBoxItem).Content.ToString();
+            string BoxString3 = (Flavor_4.SelectedItem as ComboBoxItem).Content.ToString();
+
+            switch (BoxString)
             {
-                Test_Choco.Content = "Choco: White";
+                case "Vanilla":
+                    price += 0.2;
+                    break;
+                case "Caramel":
+                    price += 0.3;
+                    break;
+                case "Mint":
+                    price += 0.5;
+                    break;
+                case "None":
+                    price += 0.0;
+                    break;
+                default:
+                    price += 0.0;
+                    break;
             }
-            else if (Dark.IsChecked == true)
+            switch (BoxString1)
             {
-                Test_Choco.Content = "Choco: Dark";
+                case "Vanilla":
+                    price += 0.2;
+                    break;
+                case "Caramel":
+                    price += 0.3;
+                    break;
+                case "Mint":
+                    price += 0.5;
+                    break;
+                case "None":
+                    price += 0.0;
+                    break;
+                default:
+                    price += 0.0;
+                    break;
             }
-            else
+            switch (BoxString2)
             {
-                Test_Choco.Content = "Choco: Milk";
+                case "Vanilla":
+                    price += 0.2;
+                    break;
+                case "Caramel":
+                    price += 0.3;
+                    break;
+                case "Mint":
+                    price += 0.5;
+                    break;
+                case "None":
+                    price += 0.0;
+                    break;
+                default:
+                    price += 0.0;
+                    break;
+            }
+            switch (BoxString3)
+            {
+                case "Vanilla":
+                    price += 0.2;
+                    break;
+                case "Caramel":
+                    price += 0.3;
+                    break;
+                case "Mint":
+                    price += 0.5;
+                    break;
+                case "None":
+                    price += 0.0;
+                    break;
+                default:
+                    price += 0.0;
+                    break;
             }
 
-            /* Caffination Check */
-            if (Reg.IsChecked == true)
+            if(Chocolate_Check.IsChecked == true)
             {
-                Test_Caff.Content = "Caff: Reg";
-            }
-            else if (Decaf.IsChecked == true)
-            {
-                Test_Caff.Content = "Caff: Decaf";
+                price += 0.3;
             }
             else
             {
-                Test_Caff.Content = "Caff: Half";
+                price += 0.0;
             }
+            if (Espresso_Check.IsChecked == true)
+            {
+                price += 0.4;
+            }
+            else
+            {
+                price += 0.0;
+            }
+            if (Whip_Check.IsChecked == true)
+            {
+                price += 0.2;
+            }
+            else
+            {
+                price += 0.0;
+            }
+
+            return price;
+        }
+
+        private void Remove_item_Click(object sender, RoutedEventArgs e)
+        {
+            if (CartListBox.SelectedIndex >= 0)
+            {
+                MainWindow.cart.RemoveAt(CartListBox.SelectedIndex);
+            }
+        }
+
+        private void Complete_Order_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CheckOut());
         }
     }
 }

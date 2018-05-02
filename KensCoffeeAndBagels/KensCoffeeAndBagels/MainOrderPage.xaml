@@ -58,30 +58,30 @@
         <TextBlock Text="Bagels" HorizontalAlignment="Left"  FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="0,0,0,0" Grid.Row="5" Grid.Column="0" Width="80"/>
         <StackPanel Grid.Column ="0" Grid.Row="6" Margin="0 ,0,0,0" Orientation="Horizontal">
             <Border Name="BagelBorder"  Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button Width = "150" Content="Bagel X" FontSize="15"  Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button Width = "150" Content="Coming Soon" FontSize="15"  Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
             <Border Name="BagelBorder1"  Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button  Width = "150" Content="Bagel X" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button  Width = "150" Content="Coming Soon" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
             <Border   Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button  Width = "150" Content="Bagel X" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button  Width = "150" Content="Coming Soon" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
             <Border  Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button  Width = "150" Content="Bagel X" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button  Width = "150" Content="Coming Soon" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
         </StackPanel>
         <StackPanel Grid.Column ="0" Grid.Row="7" Margin="0 ,0,0,0" Orientation="Horizontal">
             <Border   Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button  Width = "150" Content="Bagel X" FontSize="15"  Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button  Width = "150" Content="Coming Soon" FontSize="15"  Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
             <Border  Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button  Width = "150" Content="Bagel X" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button  Width = "150" Content="Coming Soon" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
             <Border  Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button  Width = "150" Content="Bagel X" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button  Width = "150" Content="Coming Soon" FontSize="15" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
             <Border  Padding="0" Margin="20,0,0,0" Width="150" Height="100" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Left">
-                <Button  Width = "150" Content="Bagel X" FontSize="15"  Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left"/>
+                <Button  Width = "150" Content="Coming Soon" FontSize="15"  Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="100"  HorizontalAlignment="Left" IsEnabled="False"/>
             </Border>
         </StackPanel>
 
