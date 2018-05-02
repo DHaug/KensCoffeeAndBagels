@@ -89,7 +89,7 @@ namespace KensCoffeeAndBagels
 
         private void BlackCoffee_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new BlackCoffee());
         }
 
         private void Tea_Click(object sender, RoutedEventArgs e)

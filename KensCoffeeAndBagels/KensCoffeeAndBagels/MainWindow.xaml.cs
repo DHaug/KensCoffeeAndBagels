@@ -30,6 +30,7 @@ namespace KensCoffeeAndBagels
         {
             InitializeComponent();
             BeginOrderButton.Click += new RoutedEventHandler(Begin_Click);
+            /*
             Item newItem = new Item();
             Item newItem2 = new Item();
             Item newItem3 = new Item();
@@ -44,7 +45,7 @@ namespace KensCoffeeAndBagels
             newItem3.options = "Milk" + " White Chocolate";
             cart.Add(newItem);
             cart.Add(newItem2);
-            cart.Add(newItem3);
+            cart.Add(newItem3);*/
         }
 
         private void Begin_Click(object sender, RoutedEventArgs e)
