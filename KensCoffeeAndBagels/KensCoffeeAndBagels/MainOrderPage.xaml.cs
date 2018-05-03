@@ -22,7 +22,7 @@ namespace KensCoffeeAndBagels
         public MainOrderPage()
         {
             InitializeComponent();
-            
+
             //This is where we handle the click events. Reference the button name and send it to a function
             MochaButton.Click += new RoutedEventHandler(Mocha_Click);
             FrozenDrinksButton.Click += new RoutedEventHandler(Frozen_Click);
@@ -69,7 +69,7 @@ namespace KensCoffeeAndBagels
         //Navigation still needs to be set once we create a page for these. 
         private void Blended_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new BlendedDrinkPage());
         }
 
         private void Latte_Click(object sender, RoutedEventArgs e)
@@ -79,12 +79,16 @@ namespace KensCoffeeAndBagels
 
         private void Seasonal_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            const string message = "Currently Not Available!";
+            const string caption = "Sorry!";
+            MessageBox.Show(message, caption, MessageBoxButton.OK);
         }
 
         private void Specialty_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            const string message = "Currently Not Available!";
+            const string caption = "Sorry!";
+            MessageBox.Show(message, caption, MessageBoxButton.OK);
         }
 
         private void BlackCoffee_Click(object sender, RoutedEventArgs e)
@@ -94,7 +98,7 @@ namespace KensCoffeeAndBagels
 
         private void Tea_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new TeaPage());
         }
 
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)

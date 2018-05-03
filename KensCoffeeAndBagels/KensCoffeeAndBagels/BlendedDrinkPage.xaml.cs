@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 namespace KensCoffeeAndBagels
 {
     /// <summary>
-    /// Interaction logic for LattePage.xaml
+    /// Interaction logic for BlendedDrinkPage.xaml
     /// </summary>
-    public partial class LattePage : Page
+    public partial class BlendedDrinkPage : Page
     {
         double small = 2.20;
         double medium = 2.99;
@@ -26,7 +26,7 @@ namespace KensCoffeeAndBagels
 
 
 
-        public LattePage()
+        public BlendedDrinkPage()
         {
             InitializeComponent();
 
@@ -40,7 +40,6 @@ namespace KensCoffeeAndBagels
             Complete_Order.Click += new RoutedEventHandler(CompleteOrder);
             Complete_Order.IsEnabled = false;
             Remove_item.IsEnabled = false;
-
         }
 
         private void CompleteOrder(object sender, RoutedEventArgs e)

@@ -55,7 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TeaPage.xaml.cs">
+      <DependentUpon>TeaPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="BlackCoffee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BlendedDrinkPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,6 +101,9 @@
     <Compile Include="BlackCoffee.xaml.cs">
       <DependentUpon>BlackCoffee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BlendedDrinkPage.xaml.cs">
+      <DependentUpon>BlendedDrinkPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CashPaymentPage.xaml.cs">
       <DependentUpon>CashPaymentPage.xaml</DependentUpon>
     </Compile>
@@ -121,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PaymentVerification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

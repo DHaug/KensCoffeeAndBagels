@@ -16,17 +16,17 @@ using System.Windows.Shapes;
 namespace KensCoffeeAndBagels
 {
     /// <summary>
-    /// Interaction logic for LattePage.xaml
+    /// Interaction logic for TeaPage.xaml
     /// </summary>
-    public partial class LattePage : Page
+    public partial class TeaPage : Page
     {
-        double small = 2.20;
-        double medium = 2.99;
-        double large = 3.30;
+        double small = 1.50;
+        double medium = 1.99;
+        double large = 2.30;
 
 
 
-        public LattePage()
+        public TeaPage()
         {
             InitializeComponent();
 
@@ -40,7 +40,6 @@ namespace KensCoffeeAndBagels
             Complete_Order.Click += new RoutedEventHandler(CompleteOrder);
             Complete_Order.IsEnabled = false;
             Remove_item.IsEnabled = false;
-
         }
 
         private void CompleteOrder(object sender, RoutedEventArgs e)
@@ -81,7 +80,6 @@ namespace KensCoffeeAndBagels
 
             price += getCaffinationPrice();
             price += getSizePrice();
-            price += getRoastPrice();
             price += getMilkPrice();
 
             Complete_Order.IsEnabled = true;
@@ -94,10 +92,13 @@ namespace KensCoffeeAndBagels
                 newItem.options += "Sweetner: " + Sweetner.SelectionBoxItem.ToString() + ", ";
             }
 
-            if (Sauces.SelectedIndex > 0)
+            if (TeaBag.SelectedIndex > 0)
             {
-                price += .3;
-                newItem.options += "Sauces: " + Sauces.SelectionBoxItem.ToString() + ", ";
+                if (TeaBag.SelectedIndex > 2)
+                {
+                    price += TeaBag.SelectedIndex * .2;
+                }
+                newItem.options += "Tea Bag: " + TeaBag.SelectionBoxItem.ToString() + ", ";
             }
 
             if (Creamer.SelectedIndex > 0)
@@ -118,58 +119,28 @@ namespace KensCoffeeAndBagels
                 newItem.options += "Powder: " + PowderNew.SelectionBoxItem.ToString() + ", ";
             }
 
-            if (Shots.SelectedIndex > 0)
-            {
-                price += Shots.SelectedIndex * .3;
-                newItem.options += "Syrup: " + Syrup.SelectionBoxItem.ToString() + ", ";
-            }
-
-            if (Syrup.SelectedIndex > 0)
-            {
-                price += .3;
-                newItem.options += "Shots: " + Shots.SelectionBoxItem.ToString() + ", ";
-            }
-
             if (Drizzle.SelectedIndex > 0)
             {
                 price += .3;
                 newItem.options += "Drizzle: " + Drizzle.SelectionBoxItem.ToString() + ", ";
             }
 
-            if (Foam.SelectedIndex > 0)
-            {
-                price += Foam.SelectedIndex * .3;
-                newItem.options += "Foam: " + Foam.SelectionBoxItem.ToString() + ", ";
-            }
-
             if (WhippedCream.SelectedIndex > 0)
             {
-                price += WhippedCream.SelectedIndex * .5;
+                price += .3;
                 newItem.options += "Whipped Chream: " + WhippedCream.SelectionBoxItem.ToString() + ", ";
             }
 
+            if (Topings.SelectedIndex > 0)
+            {
+                price += .3;
+                newItem.options += "Toppings: " + Topings.SelectionBoxItem.ToString() + ", ";
+            }
+
             newItem.price = (decimal)price;
-            newItem.title = LatteType.SelectionBoxItem.ToString();
+            newItem.title = TeaType.SelectionBoxItem.ToString();
 
             MainWindow.cart.Add(newItem);
-
-
-        }
-
-        private double getRoastPrice()
-        {
-            double price = 0;
-
-            if (MediumBrown.IsChecked == true)
-            {
-                price = .20;
-            }
-            else if (DarkBrown.IsChecked == true)
-            {
-                price = .40;
-            }
-
-            return price;
         }
 
         private double getMilkPrice()

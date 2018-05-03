@@ -1,0 +1,277 @@
+﻿<Page x:Class="KensCoffeeAndBagels.TeaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KensCoffeeAndBagels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TeaPage" Background="LightBlue" Height="576" Width="1024" >
+
+    <Grid>
+        <Separator Background="Black" Margin="514,282,-61,285" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.924"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Button x:Name="Complete_Order" Content="Complete Order &gt;" HorizontalAlignment="Left" Margin="808,510,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20"/>
+        <Button x:Name="Remove_item" Content="Remove" HorizontalAlignment="Left" Margin="808,410,0,0" VerticalAlignment="Top" Width="206" Height="56" FontSize="20"/>
+        <Separator Background="Black" Margin="0,296,232,271"/>
+        <TextBlock x:Name="Shop_Namee" Text="Ken's Coffee and Bagels " HorizontalAlignment="Center" TextAlignment="Center" FontSize="35" FontWeight="ExtraBold" Foreground="GhostWhite" Margin="180,10,420,518" Grid.Row="0" Grid.Column="0" Width="424"/>
+        <TextBlock x:Name="Current_Order" HorizontalAlignment="Left" Margin="807,10,0,0" TextWrapping="Wrap" Text="     Current Order" VerticalAlignment="Top" FontSize="24" Width="206"/>
+        <ListView Name="CartListBox" Background="Transparent" BorderThickness="4" Foreground="White" Margin="807,47,0,170"  ItemsSource="{Binding}" SelectionChanged="CartListBox_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=title}" Header="Type:" Width="80"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=price}" Header="Price" Width="50" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=options}" Header="Options" Width="190" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <TextBlock x:Name="Mocha_Text_1" HorizontalAlignment="Left" Margin="335,90,0,0" TextWrapping="Wrap" Text="Required" VerticalAlignment="Top" FontSize="24" Width="95"/>
+        <Rectangle x:Name="Size_Con" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="158" Margin="172,137,0,0" Stroke="Black" VerticalAlignment="Top" Width="117" Opacity="0.45" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="0.003" Y="0.417"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="Milk_Con" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="158" Margin="326,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="117" Opacity="0.45" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.003"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="Caffine_Con" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="154" Margin="479,137,0,0" Stroke="Black" VerticalAlignment="Top" Width="118" Opacity="0.45" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.003" Y="-0.415"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button x:Name="Add_To_" Content="Add to Order &gt; " HorizontalAlignment="Left" Margin="611,510,0,0" VerticalAlignment="Top" Width="181" Height="57" FontSize="24"/>
+        <TextBox x:Name="Comments" HorizontalAlignment="Left" Height="89" Margin="10,416,0,0" TextWrapping="Wrap" Text="&lt;Click to Add Comments&gt;" VerticalAlignment="Top" Width="782" FontSize="22"/>
+        <TextBlock x:Name="ToppingOpt" HorizontalAlignment="Left" Margin="454,359,0,0" TextWrapping="Wrap" Text="Toping Options" VerticalAlignment="Top" Height="27" Width="144" FontSize="20"/>
+        <TextBlock x:Name="CreamerText" HorizontalAlignment="Left" Margin="155,300,0,0" TextWrapping="Wrap" Text="Creamer" VerticalAlignment="Top" Height="32" Width="96" FontSize="20"/>
+        <TextBlock x:Name="TeaBagText" HorizontalAlignment="Left" Margin="19,359,0,0" TextWrapping="Wrap" Text="Tea Bag" VerticalAlignment="Top" Height="27" Width="96" FontSize="20"/>
+        <TextBlock x:Name="SyrupText" HorizontalAlignment="Left" Margin="155,359,0,0" TextWrapping="Wrap" Text="Syrup" VerticalAlignment="Top" Height="27" Width="96" FontSize="20"/>
+        <TextBlock x:Name="PowderText" HorizontalAlignment="Left" Margin="296,300,0,0" TextWrapping="Wrap" Text="Powders" VerticalAlignment="Top" Height="27" Width="96" FontSize="20"/>
+        <TextBlock x:Name="SweetnerText" HorizontalAlignment="Left" Margin="19,300,0,0" TextWrapping="Wrap" Text="Sweetner" VerticalAlignment="Top" Height="27" Width="96" FontSize="20" RenderTransformOrigin="0.487,0.794"/>
+        <TextBlock x:Name="DrizzleText" HorizontalAlignment="Left" Margin="296,359,0,0" TextWrapping="Wrap" Text="Drizzle" VerticalAlignment="Top" Height="27" Width="96" FontSize="20"/>
+        <TextBlock x:Name="WhippedText" HorizontalAlignment="Left" Margin="454,300,0,0" TextWrapping="Wrap" Text="Whipped Cream" VerticalAlignment="Top" Height="27" Width="150" FontSize="20"/>
+
+
+        <ComboBox x:Name="Sweetner" HorizontalAlignment="Left" Margin="19,332,0,0" VerticalAlignment="Top" Width="118" FontSize="16">
+            <ComboBoxItem IsSelected="True">None</ComboBoxItem>
+            <ComboBoxItem Content=" Equal"/>
+            <ComboBoxItem Content=" Honey"/>
+            <ComboBoxItem Content=" Sugar in the Raw"/>
+            <ComboBoxItem Content=" Splendid"/>
+            <ComboBoxItem Content=" Stevia"/>
+            <ComboBoxItem Content=" Sugar"/>
+            <ComboBoxItem Content=" Sweet 'n Low"/>
+        </ComboBox>
+        <ComboBox x:Name="Creamer" HorizontalAlignment="Left" Margin="155,332,0,0" VerticalAlignment="Top" Width="118" FontSize="16" RenderTransformOrigin="0.314,0.545">
+            <ComboBoxItem IsSelected="True">None</ComboBoxItem>
+            <ComboBoxItem Content="1/4 Ounce"/>
+            <ComboBoxItem Content="1/2 Ounce"/>
+            <ComboBoxItem Content="3/4 Ounce"/>
+            <ComboBoxItem Content=" 1  Ounce"/>
+        </ComboBox>
+
+        <ComboBox x:Name="TeaBag" HorizontalAlignment="Left" Margin="19,386,0,0" VerticalAlignment="Top" Width="120" FontSize="16">
+            <ComboBoxItem IsSelected="True">2</ComboBoxItem>
+            <ComboBoxItem Content=" 1"/>
+            <ComboBoxItem Content=" 2"/>
+            <ComboBoxItem Content=" 3"/>
+            <ComboBoxItem Content=" 4"/>
+            <ComboBoxItem Content=" 5"/>
+        </ComboBox>
+
+        <ComboBox x:Name="Syrup" HorizontalAlignment="Left" Margin="155,386,0,0" VerticalAlignment="Top" Width="120" FontSize="16">
+            <ComboBoxItem IsSelected="True">None</ComboBoxItem>
+            <ComboBoxItem Content=" Caramel"/>
+            <ComboBoxItem Content=" Cascara"/>
+            <ComboBoxItem Content=" Cinnamon"/>
+            <ComboBoxItem Content=" Classic"/>
+            <ComboBoxItem Content=" Hazelnut"/>
+            <ComboBoxItem Content=" Peppermint"/>
+            <ComboBoxItem Content=" Raspberry"/>
+            <ComboBoxItem Content=" Toffee Nut"/>
+            <ComboBoxItem Content=" Vanilla"/>
+        </ComboBox>
+
+        <TextBlock x:Name="Size" HorizontalAlignment="Left" Margin="197,138,0,0" TextWrapping="Wrap" Text="Size" VerticalAlignment="Top" Height="32" Width="50" FontSize="24" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.164" Y="0.44"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Size_Copy" HorizontalAlignment="Left" Margin="363,138,0,0" TextWrapping="Wrap" Text="Milk" VerticalAlignment="Top" Height="32" Width="50" FontSize="24" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.165" Y="-0.009"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Size_Copy2" HorizontalAlignment="Left" Margin="485,140,0,0" TextWrapping="Wrap" Text="Caffination" VerticalAlignment="Top" Height="32" Width="112" FontSize="22" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.16" Y="-0.423"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <RadioButton x:Name="Size_S" GroupName="Size" Content="Small" HorizontalAlignment="Left" Margin="180,182,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.053" Y="0.463"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="Size_M" GroupName="Size" Content="Medium" HorizontalAlignment="Left" Margin="178,216,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="0.038" Y="0.433"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="Size_L" GroupName="Size" Content="Large" HorizontalAlignment="Left" Margin="178,251,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="0.133" Y="0.466"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="Two" GroupName="Milk" Content="2%" HorizontalAlignment="Left" Margin="333,175,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.073" Y="0.077"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="Whole" GroupName="Milk" Content="Whole" HorizontalAlignment="Left" Margin="333,204,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="0.005" Y="0.037"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="Nonfat" GroupName="Milk" Content="Nonfat" HorizontalAlignment="Left" Margin="333,233,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="0.084" Y="0.031"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="NoneMilk" GroupName="Milk" Content="None" HorizontalAlignment="Left" Margin="335,265,0,0" VerticalAlignment="Top" FontSize="20" Checked="None_Checked" IsChecked="True" RenderTransformOrigin="1.439,0.629"/>
+        <RadioButton x:Name="Reg" GroupName="Caff" Content="Regular" HorizontalAlignment="Left" Margin="485,175,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="-0.074" Y="-0.388"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="Decaf" GroupName="Caff" Content="Decaf" HorizontalAlignment="Left" Margin="485,204,0,0" VerticalAlignment="Top" FontSize="20" IsChecked="True" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="0.005" Y="-0.365"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <RadioButton x:Name="Half" GroupName="Caff" Content="Half" HorizontalAlignment="Left" Margin="485,233,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5">
+            <RadioButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-360.155"/>
+                    <TranslateTransform X="0.083" Y="-0.345"/>
+                </TransformGroup>
+            </RadioButton.RenderTransform>
+        </RadioButton>
+        <Button x:Name="Back_Button" Content="&lt; Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="141" Height="47" FontSize="20"/>
+        <ComboBox x:Name="PowderNew" HorizontalAlignment="Left" Margin="296,332,0,0" VerticalAlignment="Top" Width="120" FontSize="16">
+            <ComboBoxItem IsSelected="True" Content="None"/>
+            <ComboBoxItem Content=" Chocolate"/>
+            <ComboBoxItem Content=" Cinnamon"/>
+            <ComboBoxItem Content=" Nutmeg"/>
+            <ComboBoxItem Content=" Vanilla"/>
+
+        </ComboBox>
+
+        <ComboBox x:Name="Drizzle" HorizontalAlignment="Left" Margin="296,386,0,0" VerticalAlignment="Top" Width="120" FontSize="16">
+            <ComboBoxItem IsSelected="True" Content="None"/>
+            <ComboBoxItem Content=" Caramel"/>
+            <ComboBoxItem Content=" Mocha"/>
+
+        </ComboBox>
+        <ComboBox x:Name="WhippedCream" HorizontalAlignment="Left" Margin="454,332,0,0" VerticalAlignment="Top" Width="120" FontSize="16">
+            <ComboBoxItem IsSelected="True" Content="None"/>
+            <ComboBoxItem Content=" Light"/>
+            <ComboBoxItem Content=" Regular"/>
+            <ComboBoxItem Content=" Extra"/>
+
+        </ComboBox>
+        <ComboBox x:Name="Topings" HorizontalAlignment="Left" Margin="454,386,0,0" VerticalAlignment="Top" Width="120" FontSize="16">
+            <ComboBoxItem IsSelected="True" Content="None"/>
+            <ComboBoxItem Content=" Cascara"/>
+            <ComboBoxItem Content=" Cinnamon Dolce"/>
+        </ComboBox>
+        <ComboBox x:Name="TeaType" HorizontalAlignment="Left" Margin="286,63,0,0" VerticalAlignment="Top" Width="214" FontSize="16" RenderTransformOrigin="0.558,0.552" Height="32">
+            <ComboBoxItem IsSelected="True" Content="Organic Tea"/>
+            <ComboBoxItem Content=" Black Tea"/>
+            <ComboBoxItem Content=" Green Tea"/>
+            <ComboBoxItem Content=" Herbal Tea"/>
+            <ComboBoxItem Content=" Peach Herbal Tea"/>
+        </ComboBox>
+    </Grid>
+</Page>

@@ -1,4 +1,4 @@
-﻿<Page x:Class="KensCoffeeAndBagels.LattePage"
+﻿<Page x:Class="KensCoffeeAndBagels.BlendedDrinkPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:KensCoffeeAndBagels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LattePage" Background="LightBlue" Height="576" Width="1024">
+      Title="BlendedDrinkPage" Background="LightBlue" Height="576" Width="1024">
 
     <Grid>
         <Separator Background="Black" Margin="514,282,-61,285" RenderTransformOrigin="0.5,0.5">
@@ -156,13 +156,11 @@
             <ComboBoxItem Content=" Cinnamon Dolce"/>
         </ComboBox>
         <ComboBox x:Name="LatteType" HorizontalAlignment="Left" Margin="286,63,0,0" VerticalAlignment="Top" Width="214" FontSize="16" RenderTransformOrigin="0.558,0.552" Height="32">
-            <ComboBoxItem IsSelected="True" Content="Caffee Latte"/>
-            <ComboBoxItem Content=" Reserve Latte"/>
-            <ComboBoxItem Content=" Reserve Hazelnut Latte"/>
-            <ComboBoxItem Content=" Cinamon Dolce Latte"/>
-            <ComboBoxItem Content=" Skinny Cinamon Dolce Latte"/>
-            <ComboBoxItem Content=" Blonde Caffee Latte"/>
-            <ComboBoxItem Content=" Blonde Vanilla Latte"/>
+            <ComboBoxItem IsSelected="True" Content=" Cramel Frappe"/>
+            <ComboBoxItem Content=" Mocha Latte"/>
+            <ComboBoxItem Content=" Vanilla Frappe"/>
+            <ComboBoxItem Content=" Cinnamon Frappe"/>
+            <ComboBoxItem Content=" Chocolate Frappe"/>
 
         </ComboBox>
 
