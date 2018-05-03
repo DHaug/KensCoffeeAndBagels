@@ -18,14 +18,16 @@ namespace KensCoffeeAndBagels
         public string title { get; set; }
         public string options { get; set; }
     }
-
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Page
     {
         public static ObservableCollection<Item> cart = new ObservableCollection<Item>();
-
+        public static double subtotal;
+        public static double tax;
+        public static double tip;
         public MainWindow()
         {
             InitializeComponent();

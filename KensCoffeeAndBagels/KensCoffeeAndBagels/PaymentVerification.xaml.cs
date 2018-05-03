@@ -22,7 +22,7 @@ namespace KensCoffeeAndBagels
     public partial class PaymentVerification : Page
     {
         NumberFormatInfo setPrecision = new NumberFormatInfo();
-        public PaymentVerification()
+        public PaymentVerification(double subtotal)
         {
             setPrecision.NumberDecimalDigits = 2;
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace KensCoffeeAndBagels
             NoButton.Click += new RoutedEventHandler(NoButton_Click);
             YesButton.Click += new RoutedEventHandler(YesButton_Click);
 
-            TotalText.Text += CreditPaymentPage.subtotal.ToString("N", setPrecision); ;
+            TotalText.Text += MainWindow.subtotal.ToString("N", setPrecision);
         }
 
         private void NoButton_Click(object sender, RoutedEventArgs e)
@@ -40,10 +40,11 @@ namespace KensCoffeeAndBagels
 
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MainOrderPage());
             MainWindow.cart.Clear();
-            CreditPaymentPage.subtotal = 0;
-            CreditPaymentPage.tax = 0;
+            MainWindow.subtotal = 0;
+            MainWindow.tax = 0;
+            NavigationService.Navigate(new MainWindow());
+            
         }
     }
 }

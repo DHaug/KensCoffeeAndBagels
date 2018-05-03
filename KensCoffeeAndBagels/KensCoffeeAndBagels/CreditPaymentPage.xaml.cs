@@ -22,9 +22,7 @@ namespace KensCoffeeAndBagels
     public partial class CreditPaymentPage : Page
     {
         NumberFormatInfo setPrecision = new NumberFormatInfo();
-        public static double subtotal;
-        public static double tax;
-        double tip;
+        
 
 
         public CreditPaymentPage()
@@ -39,7 +37,9 @@ namespace KensCoffeeAndBagels
 
             OrderListBox.ItemsSource = MainWindow.cart;
             OrderListBox.DataContext = MainWindow.cart;
-
+            MainWindow.subtotal = 0;
+            MainWindow.tax = 0;
+            MainWindow.tip = 0;
             CalcTax();
             CalcTotal();
         }
@@ -48,33 +48,34 @@ namespace KensCoffeeAndBagels
         {
             for (int i = 0; i < MainWindow.cart.Count; i++)
             {
-                subtotal += (double)MainWindow.cart[i].price;
+                MainWindow.subtotal += (double)MainWindow.cart[i].price;
             }
-            tax = subtotal * 0.04;
-            TaxValue.Text = "$" + tax.ToString("N", setPrecision);
+            MainWindow.tax = MainWindow.subtotal * 0.04;
+            TaxValue.Text = "$" + MainWindow.tax.ToString("N", setPrecision);
         }
 
         private void CalcTotal()
         {
-            subtotal = subtotal + tip + tax;   
-            SubtotalValue.Text = "$" + subtotal.ToString("N", setPrecision);
+            MainWindow.subtotal = MainWindow.subtotal + MainWindow.tip + MainWindow.tax;
+            SubtotalValue.Text = "$" + MainWindow.subtotal.ToString("N", setPrecision);
         }
         private void UpdateTip(object sender, RoutedEventArgs e)
         {
             try
             {
-                subtotal -= tip;
-                tip = Convert.ToDouble(TipAmount.Text);
-                TipValue.Text = "$" + tip.ToString("N", setPrecision);
-                subtotal += tip;
-                SubtotalValue.Text = "$" + subtotal.ToString("N", setPrecision);
+                MainWindow.subtotal -= MainWindow.tip;
+                MainWindow.tip = Convert.ToDouble(TipAmount.Text);
+                TipValue.Text = "$" + MainWindow.tip.ToString("N", setPrecision);
+                MainWindow.subtotal += MainWindow.tip;
+                SubtotalValue.Text = "$" + MainWindow.subtotal.ToString("N", setPrecision);
             } catch { }
             
         }
 
         private void Continue_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PaymentVerification());
+            NavigationService.Navigate(new PaymentVerification(MainWindow.subtotal));
+            
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
