@@ -31,10 +31,10 @@
         <TextBox x:Name="ReceiptEmail" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Email Here&gt;" VerticalAlignment="Top" FontSize="22" Width="342" Margin="306,442,0,0"/>
         <TextBlock Text="Tip" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="306,477,0,65"/>
         <TextBox x:Name="TipAmount" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Width="342" Margin="306,519,0,0" Text="1.00"/>
-        <TextBox x:Name="Enter_Cash" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Cash Amount&gt;" VerticalAlignment="Top" FontSize="22" Width="230" Margin="653,256,0,0"/>
+        <TextBox x:Name="Enter_Cash" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Cash Amount&gt;" VerticalAlignment="Top" FontSize="22" Width="230" Margin="653,256,0,0" IsEnabled="False"/>
         <TextBlock x:Name="Cash_Label" Text="Cash" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="744,218,0,324"/>
-        <Button x:Name="Proceed" Content="Button" HorizontalAlignment="Left" Margin="778,292,0,0" VerticalAlignment="Top" Width="105" Height="47"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="653,292,0,0" VerticalAlignment="Top" Width="105" Height="47"/>
+        <Button x:Name="Proceed" Content="Proceed" HorizontalAlignment="Left" Margin="778,292,0,0" VerticalAlignment="Top" Width="105" Height="47" IsEnabled="False" FontSize="20"/>
+        <Button Content="Open Register" HorizontalAlignment="Left" Margin="653,292,0,0" VerticalAlignment="Top" Width="105" Height="47" IsEnabled="False" FontSize="16"/>
 
     </Grid>
 </Page>
