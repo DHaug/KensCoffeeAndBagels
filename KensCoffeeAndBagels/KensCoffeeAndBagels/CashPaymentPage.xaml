@@ -1,0 +1,40 @@
+﻿<Page x:Class="KensCoffeeAndBagels.CashPaymentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KensCoffeeAndBagels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CashPaymentPage" Background="LightBlue" Height="576" Width="1024">
+
+    <Grid>
+        <TextBlock Text="Ken's Coffee and Bagels " HorizontalAlignment="Center"  FontSize="35" FontWeight="ExtraBold" Foreground="GhostWhite" Margin="306.5,10,293.5,496" Grid.Row="0" Grid.Column="0" Width="424"/>
+        <Button x:Name="Back_Button" Content="&lt; Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="141" Height="47" FontSize="20" Click="Back_Button_Click"/>
+        <ListView x:Name="OrderListBox" Grid.Column="0" Background="Transparent" BorderThickness="4" Foreground="White" Margin="5,90,584,174"  ItemsSource="{Binding}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding title}" Header="Type:" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding price}" Header="Price" Width="110" />
+                    <GridViewColumn DisplayMemberBinding="{Binding options}" Header="Options" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Text="Tax" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,422.873,0,119.873" Grid.Column="0"/>
+        <TextBlock Text="Tip" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,477.373,0,65.373" Grid.Column="0"/>
+        <TextBlock Text="Subtotal" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="5,531.873,0,10.873" Grid.Column="0"/>
+        <TextBlock x:Name="TaxValue" Text="$0.00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="155,422.873,0,119.873"/>
+        <TextBlock x:Name="TipValue" Text="$0.00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="155,477.373,0,65.373"/>
+        <TextBlock x:Name="SubtotalValue" Text="$0.00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="155,531.873,0,10.873"/>
+        <Button x:Name="AddTip" Content="+" Margin="368,478,0,64" Width="30" HorizontalAlignment="Left"/>
+        <TextBlock Text="Receipt" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="306,402,0,141"/>
+        <TextBox x:Name="ReceiptEmail" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Email Here&gt;" VerticalAlignment="Top" FontSize="22" Width="342" Margin="306,442,0,0"/>
+        <TextBlock Text="Tip" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="306,477,0,65"/>
+        <TextBox x:Name="TipAmount" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Width="342" Margin="306,519,0,0" Text="1.00"/>
+        <TextBox x:Name="Enter_Cash" HorizontalAlignment="Left" TextWrapping="Wrap" Text="&lt;Insert Cash Amount&gt;" VerticalAlignment="Top" FontSize="22" Width="230" Margin="653,256,0,0"/>
+        <TextBlock x:Name="Cash_Label" Text="Cash" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Foreground="Black" Margin="744,218,0,324"/>
+        <Button x:Name="Proceed" Content="Button" HorizontalAlignment="Left" Margin="778,292,0,0" VerticalAlignment="Top" Width="105" Height="47"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="653,292,0,0" VerticalAlignment="Top" Width="105" Height="47"/>
+
+    </Grid>
+</Page>

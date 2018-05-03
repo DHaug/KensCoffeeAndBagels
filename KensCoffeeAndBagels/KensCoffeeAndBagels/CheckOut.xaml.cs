@@ -60,7 +60,7 @@ namespace KensCoffeeAndBagels
 
         private void Cash_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new CashPaymentPage());
         }
 
         private void Credit_Click(object sender, RoutedEventArgs e)
